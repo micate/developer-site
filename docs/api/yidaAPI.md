@@ -367,6 +367,19 @@ export function popToast(){
     size: 'large', 
   })
 }
+
+// 支持手动调用关闭方法
+export function showLoadingToast() {
+  // 拿到返回值，该返回值是一个关闭方法
+  const close = this.utils.toast({
+    title: '加载中', 
+    type: 'loading', 
+    size: 'large', 
+  });
+  
+  // 在合适的时候调用关闭方法
+  setTimeout(close, 3000);
+}
 ```
 
 ## 路由相关 API
